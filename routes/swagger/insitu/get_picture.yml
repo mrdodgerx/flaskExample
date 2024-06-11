@@ -1,0 +1,27 @@
+summary: Get Station Picture
+tags:
+  - Insitu
+parameters:
+  - name: station_name
+    in: path
+    description: Station Name
+    required: true
+    schema:
+      type: string
+responses:
+  '200':
+    description: OK
+    content:
+      image/jpg: {}
+      image/png: {}
+  '404':
+    description: Image not found
+content:
+application/json:
+  schema:
+    type: object
+    properties:
+      status:
+        type: boolean
+      message:
+        type: string

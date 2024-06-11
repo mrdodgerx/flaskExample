@@ -1,0 +1,31 @@
+
+tags:
+  - Data
+summary: Insert data
+description: Insert data into the database
+parameters:
+  - in: body
+    name: data
+    description: Data to insert
+    required: true
+    schema:
+      type: object
+responses:
+  200:
+    description: Successful operation
+  400:
+    description: Bad request
+    schema:
+      type: object
+      properties:
+        msg:
+          type: string
+          example: Missing JSON in request
+  500:
+    description: Internal server error
+    schema:
+      type: object
+      properties:
+        msg:
+          type: string
+          example: Error message

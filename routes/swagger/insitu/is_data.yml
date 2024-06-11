@@ -1,0 +1,81 @@
+summary: Upload Investigate Study Data
+description: Upload data for Investigate Study.
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          obj_json:
+            type: array
+            items:
+              type: object
+              properties:
+                STATION_ID:
+                  type: string
+                SAMPLE_ID:
+                  type: string
+                DATETIME:
+                  type: string
+                DO_CON:
+                  type: number
+                DO_SAT:
+                  type: number
+                pH:
+                  type: number
+                pH_MV:
+                  type: number
+                TEMPERATURE:
+                  type: number
+                TURBIDITY:
+                  type: number
+                ACTUAL_CONDUCTIVITY:
+                  type: number
+                SPECIFIC_CONDUCTIVITY:
+                  type: number
+                SALINITY:
+                  type: number
+                RESISTIVITY:
+                  type: number
+                DENSITY:
+                  type: number
+                TDS:
+                  type: number
+                OXYGEN_PARTIAL_PRESSURE:
+                  type: number
+                ORP:
+                  type: number
+                BAROMETRIC_PRESSURE:
+                  type: number
+                PRESSURE:
+                  type: number
+                DEPTH:
+                  type: number
+                EXTERNAL_VOLTAGE:
+                  type: number
+                BATTERY_CAPACITY:
+                  type: number
+                LATITUDE:
+                  type: number
+                LONGITUDE:
+                  type: number
+responses:
+  '200':
+    description: Data updated/inserted successfully
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            msg:
+              type: string
+  '500':
+    description: Internal Server Error
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            msg:
+              type: string

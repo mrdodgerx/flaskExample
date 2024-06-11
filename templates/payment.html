@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .payment-form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .payment-option {
+            margin-top: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="payment-form">
+        <h2>Payment Details</h2>
+        <form id="payment-form">
+            <label for="amount">Amount:</label>
+            <input type="text" id="amount" placeholder="Enter amount">
+
+            <!-- FPX Payment -->
+            <div id="fpx-payment" class="payment-option">
+                <label>FPX Payment</label>
+                <button id="fpx-pay-button">Pay with FPX</button>
+            </div>
+
+            <!-- Credit Card Payment -->
+            <div id="cc-payment" class="payment-option">
+                <label>Credit Card Payment</label>
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" placeholder="Enter card number">
+                <label for="expiry-date">Expiry Date:</label>
+                <input type="text" id="expiry-date" placeholder="MM/YYYY">
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" placeholder="Enter CVV">
+                <button id="cc-pay-button">Pay with Credit Card</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const fpxPayButton = document.getElementById('fpx-pay-button');
+            const ccPayButton = document.getElementById('cc-pay-button');
+
+            fpxPayButton.addEventListener('click', function () {
+                // Implement FPX payment logic here
+                alert('FPX payment processing...');
+            });
+
+            ccPayButton.addEventListener('click', function () {
+                // Implement Credit Card payment logic here
+                const cardNumber = document.getElementById('card-number').value;
+                const expiryDate = document.getElementById('expiry-date').value;
+                const cvv = document.getElementById('cvv').value;
+
+                // Validate card information and proceed with payment
+                if (cardNumber && expiryDate && cvv) {
+                    alert('Credit Card payment processing...');
+                } else {
+                    alert('Please fill in all credit card details.');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

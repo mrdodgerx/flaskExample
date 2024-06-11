@@ -1,0 +1,51 @@
+summary: UPLOAD USERS PICTURE
+tags:
+  - Insitus
+requestBody:
+  required: true
+  content:
+    multipart/form-data:
+      schema:
+        type: object
+        properties:
+          station_namessss:
+            type: string
+          file:
+            type: string
+            format: binary
+responses:
+  '200':
+    description: Successful operation
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            status:
+              type: boolean
+            success:
+              type: string
+  '400':
+    description: Bad request
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            error:
+              type: string
+  '500':
+    description: Internal server error
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            status:
+              type: boolean
+            error:
+              type: string
+            message:
+              type: string
+security:
+- Bearer: []

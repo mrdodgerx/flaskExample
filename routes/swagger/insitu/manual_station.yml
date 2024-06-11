@@ -1,0 +1,25 @@
+tags:
+  - Insitu
+summary: List Manual Stations
+description: Retrieves distinct station IDs from the MANUAL database.
+responses:
+  '200':
+    description: Successful response
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            data:
+              type: array
+              items:
+                type: string
+  '500':
+    description: Internal Server Error
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            msg:
+              type: string
